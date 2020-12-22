@@ -20,6 +20,7 @@ object Day1 extends App {
     }
   }
 
+  println("Day 1:1")
   matchPairs(numbers, List())
     .foreach(println)
 
@@ -32,5 +33,6 @@ object Day1 extends App {
     if (first + second + third == 2020)
   } yield (first * second * third)
 
+  println("Day 1:2")
   threePairs.foreach(println)
 }

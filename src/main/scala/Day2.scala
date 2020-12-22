@@ -26,6 +26,7 @@ object Day2 extends App {
     charCount >= pw.min && charCount <= pw.max
   })
 
+  println("Day 2:1")
   println(validPws.size)
 
   val valid2Pws = pws.filter(pw => {
@@ -34,5 +35,6 @@ object Day2 extends App {
     (firstMatches || secondMatches) && !(firstMatches && secondMatches)
   })
 
+  println("Day 2:2")
   println(valid2Pws.size)
 }

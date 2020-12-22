@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 import scala.io.Source;
 
 case class Map(trees: List[List[Boolean]]) {
@@ -13,8 +14,8 @@ object Day3 extends App {
     .toList
   val map: Map = Map(trees)
 
-  @scala.annotation.tailrec
-  def countTrees(x: Int, y: Int, deltaX: Int, deltaY: Int, count: Long = 0): Long = {
+  @tailrec
+  def countTrees(x: Int, y: Int, deltaX: Int = 3, deltaY: Int = 1, count: Long = 0): Long = {
     if (y >= map.height) {
       count
     } else {
@@ -23,11 +24,15 @@ object Day3 extends App {
     }
   }
 
+  println("Day 3:1")
+  println(countTrees(0, 0))
+
+  println("Day 3:2")
   println(
-    countTrees(0,0, 1, 1) *
-    countTrees(0,0, 3, 1) *
-    countTrees(0,0, 5, 1) *
-    countTrees(0,0, 7, 1) *
-    countTrees(0,0, 1, 2)
+    countTrees(0, 0, 1, 1) *
+    countTrees(0, 0, 3, 1) *
+    countTrees(0, 0, 5, 1) *
+    countTrees(0, 0, 7, 1) *
+    countTrees(0, 0, 1, 2)
   )
 }
